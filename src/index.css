@@ -2,7 +2,7 @@
   --color-grey-primary: #f0f0f0;
   --color-yellow-primary: goldenrod;
   --color-orange-primary: darkorange;
-  --color-green-primary: #FF1493;
+  --color-green-primary: #FFA500;
   --background-color: #fff;
   /* Background color */
   --text-color: #232323;
@@ -17,13 +17,13 @@
   /* Shadow color */
   --hover-color: rgba(255, 255, 255, 0.95);
   /* Hover background color */
-  --button-background: #FF1493;
+  --button-background: #FFA500;
   /* Button background color */
-  --button-hover-background: #FF1493;
+  --button-hover-background: #FFA500;
   /* Button hover background color */
   --button-text-color: #fff;
   /* Button text color */
-  --button-border-color: #FF1493;
+  --button-border-color: #FFA500;
   /* Button border color */
   --button-border-radius: 0.8rem;
   /* Button border radius */
