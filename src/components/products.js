@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { FaStar } from 'react-icons/fa';
+import { useState, useEffect } from "react";
+import { FaStar } from "react-icons/fa";
 
 export function Products({
   id,
@@ -8,29 +8,30 @@ export function Products({
   description,
   appLink,
   rating,
+  timeLeft,
 }) {
   const [downloads, setDownloads] = useState(0);
 
-  // Load downloads from localStorage (client-side only)
+  // Load downloads from localStorage
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(`downloads_${id}`);
-      if (saved) {
-        setDownloads(parseInt(saved, 10));
-      }
+    if (typeof window === "undefined") return;
+
+    const savedDownloads = localStorage.getItem(`downloads_${id}`);
+    if (savedDownloads) {
+      setDownloads(Number(savedDownloads));
     }
   }, [id]);
 
   // Save downloads to localStorage
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(`downloads_${id}`, downloads);
-    }
+    if (typeof window === "undefined") return;
+
+    localStorage.setItem(`downloads_${id}`, downloads);
   }, [id, downloads]);
 
   const handleDownload = () => {
-    setDownloads(prev => prev + 1);
-    window.open(appLink, '_blank', 'noopener,noreferrer');
+    setDownloads((prev) => prev + 1);
+    window.open(appLink, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -47,15 +48,15 @@ export function Products({
 
           <div className="displayStack__1">
             <select className="productPrice">
-              {description.map((option, index) => (
-                <option key={index} value={option}>
-                  {option}
+              {description.map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
                 </option>
               ))}
             </select>
 
             <div className="productRating">
-              {[...Array(rating)].map((_, index) => (
+              {Array.from({ length: rating }).map((_, index) => (
                 <FaStar key={index} />
               ))}
             </div>
@@ -68,6 +69,10 @@ export function Products({
             >
               DOWNLOAD
             </button>
+
+            <p className="time-left">
+              {timeLeft} days left
+            </p>
 
             <p className="download-text">
               Client Downloads: {downloads}
