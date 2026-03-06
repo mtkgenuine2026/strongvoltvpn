@@ -8,7 +8,7 @@ const productData = [
       rating: 5,
       timeLeft: 27,
       appLink: "https://gitlab.com/mtkdev1/dextereskalarte/-/raw/main/strongvoltvpn.apk"
-    }
+    },
    {
       id: 1,
       name: "Strong Volt XRAY",
