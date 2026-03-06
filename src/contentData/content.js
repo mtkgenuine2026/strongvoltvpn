@@ -10,7 +10,7 @@ const productData = [
       appLink: "https://gitlab.com/mtkdev1/dextereskalarte/-/raw/main/strongvoltvpn.apk"
     },
    {
-      id: 1,
+      id: 2,
       name: "Strong Volt XRAY",
       image:"https://i.ibb.co/67rCfs8p/favicon.png",
       productType: "openBackHeadphones",
